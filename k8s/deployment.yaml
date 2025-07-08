@@ -1,6 +1,20 @@
-containers:
-- name: smartops
-  image: cesar642/smartops-app:latest
-  ports:
-  - containerPort: 8080
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartops-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartops
+  template:
+    metadata:
+      labels:
+        app: smartops
+    spec:
+      containers:
+      - name: smartops
+        image: cesar642/smartops-app:latest
+        ports:
+        - containerPort: 8080
 
