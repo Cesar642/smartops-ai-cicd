@@ -1,0 +1,6 @@
+containers:
+- name: smartops
+  image: cesar642/smartops-app:latest
+  ports:
+  - containerPort: 8080
+
